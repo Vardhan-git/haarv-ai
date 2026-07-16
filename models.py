@@ -1,8 +1,7 @@
 from pydantic import BaseModel  
 
-class Products(BaseModel):
-    id: int
-    name: str
+class Course(BaseModel):
+    title: str
+    code: str
+    term: str
     description: str
-    price: int
-    quantity: int

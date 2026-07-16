@@ -1,14 +1,13 @@
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import declarative_base
 
 Base = declarative_base()
 
-class Products(Base):
+class CourseDB(Base):
+    __tablename__ = "courses"
 
-    __tablename__ = "products"
-
-    id = Column(Integer, primary_key = True , index=True)
-    name = Column(String)
+    id = Column(Integer, primary_key=True, index=True)
+    title = Column(String, nullable=False)
+    code = Column(String, nullable=False)
+    term = Column(String, nullable=False)
     description = Column(String)
-    price = Column(Integer)
-    quantity = Column(Integer)
